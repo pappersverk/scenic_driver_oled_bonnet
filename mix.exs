@@ -6,6 +6,8 @@ defmodule ScenicDriverOLEDBonnet.MixProject do
       app: :scenic_driver_oled_bonnet,
       version: "0.1.0",
       elixir: "~> 1.8",
+      description: description(),
+      package: package(),
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -27,5 +29,16 @@ defmodule ScenicDriverOLEDBonnet.MixProject do
       {:ssd1306, "~> 0.1", github: "nerves-training/ssd1306"},
       {:rpi_fb_capture, "~> 0.1"}
     ]
+  end
+
+  defp description do
+    "Adafruit OLED Bonnet driver for Scenic"
+  end
+
+  defp package do
+    %{
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => "https://github.com/nerves-training/scenic_driver_oled_bonnet"}
+    }
   end
 end
